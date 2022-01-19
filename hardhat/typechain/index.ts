@@ -2,5 +2,7 @@
 /* tslint:disable */
 /* eslint-disable */
 export type { HelloWorldContract } from "./HelloWorldContract";
+export type { DebugContract } from "./DebugContract";
 
 export { HelloWorldContract__factory } from "./factories/HelloWorldContract__factory";
+export { DebugContract__factory } from "./factories/DebugContract__factory";
