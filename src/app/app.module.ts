@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HelloWorldContractModule } from './dapp/demos/1-hello-world-contract/hello-world-contract.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DebugContractModule } from './dapp/demos/2-debug-contract/debug-contract.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     HelloWorldContractModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    DebugContractModule
   ],
   providers: [],
   bootstrap: [AppComponent]
