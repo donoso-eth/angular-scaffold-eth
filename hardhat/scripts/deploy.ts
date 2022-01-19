@@ -25,7 +25,7 @@ ensureDir(contract_path)
 async function main() {
   const contract_config = JSON.parse(readFileSync( join(processDir,'contract.config.json'),'utf-8')) as {[key:string]: ICONTRACT_DEPLOY}
   
-  const deployContracts=["debugContract"]
+  const deployContracts=["minimalContract"]
  
   // Hardhat always runs the compile task when running scripts with its command
   // line interface.
@@ -41,6 +41,7 @@ async function main() {
     const Metadata = JSON.parse(readFileSync( artifactsPath,'utf-8'))
     const Contract = await ethers.getContractFactory(toDeployContract.name);
 
+ 
     let contract
     toDeployContract.ctor == undefined ?  contract = await Contract.deploy() : contract = await Contract.deploy(toDeployContract.ctor);
     await contract.deployed();
