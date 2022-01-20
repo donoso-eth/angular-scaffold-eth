@@ -1,9 +1,9 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "C:\\Users\\javie\\Documents\\WEB\\BLOCKCHAIN\\angular-scaffold-eth\\hardhat\\contracts\\1-HelloWorldContract.sol": {
-      "lastModificationDate": 1642613914125,
-      "contentHash": "ee94d7c09010ae265dd973b2407eeaa7",
+    "/Users/javier/Documents/WEB/BLOCKCHAIN/angular-scaffold-eth/hardhat/contracts/1-HelloWorldContract.sol": {
+      "lastModificationDate": 1642672589454,
+      "contentHash": "bfe5b469f479de39053a5e8a032ce115",
       "sourceName": "contracts/1-HelloWorldContract.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -38,8 +38,8 @@
         "HelloWorldContract"
       ]
     },
-    "C:\\Users\\javie\\Documents\\WEB\\BLOCKCHAIN\\angular-scaffold-eth\\node_modules\\hardhat\\console.sol": {
-      "lastModificationDate": 1642613984450,
+    "/Users/javier/Documents/WEB/BLOCKCHAIN/angular-scaffold-eth/node_modules/hardhat/console.sol": {
+      "lastModificationDate": 1642672902859,
       "contentHash": "cc4777addd464ea56fa35b1c45df0591",
       "sourceName": "hardhat/console.sol",
       "solcConfig": {
