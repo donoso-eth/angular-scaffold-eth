@@ -1,11 +1,18 @@
 
 import { InjectionToken } from '@angular/core';
-import MinimalContractMetadata from '../../../../assets/contracts/minimal_contract_metadata.json';
-import { NetworkProviderService, ContractService, WalletService } from 'angularonchain';
 
+import { NetworkProviderService, ContractService, WalletService } from 'angularonchain';
+import simpleNftContractMetadata from '../../../../assets/contracts/simple_nft_contract_metadata.json';
+
+
+////// Common Providers
 export const localNodeProvider = new InjectionToken<NetworkProviderService>('localNodeProvider');
-export const nftSimpleContract = new InjectionToken<ContractService>('miminalContract')
+export const simpleNfTContract = new InjectionToken<ContractService>('simpleNfTContract')
 
 
 export const blockchain_providers = [ {provide: 'localNodeProvider', useValue: new NetworkProviderService([])},
-{provide: 'minimalContract', useValue: new ContractService(MinimalContractMetadata)}, WalletService]
+{provide: 'simpleNfTContract', useValue: new ContractService(simpleNftContractMetadata)}, WalletService]
+
+////// Common Components Wirings
+import { HomeModule, ContractShowModule, AddressShowModule, BlockchainModule, DialogModule, NotifierModule } from 'angularonchain';
+export const blockchain_imports = [HomeModule, ContractShowModule,AddressShowModule,BlockchainModule,DialogModule,NotifierModule]

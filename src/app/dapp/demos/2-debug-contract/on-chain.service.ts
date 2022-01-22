@@ -45,7 +45,7 @@ export class OnChainService {
     const myProvider = await this.localProvider.init()
     await this.localProvider.initBlockSubscription()
     const myWallet = await this.walletService.init(myProvider)
-    console.log(myWallet)
+   
     await this.contractService.init(myProvider,myWallet)
 
   }

@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MinimalContractModule } from './dapp/demos/0-minimal-contract/minimal-contract.module';
+import { SimpleNftExampleModule } from './dapp/demos/3-simple-nft-example/simple-nft-example.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +12,7 @@ import { MinimalContractModule } from './dapp/demos/0-minimal-contract/minimal-c
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MinimalContractModule,
+    SimpleNftExampleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
