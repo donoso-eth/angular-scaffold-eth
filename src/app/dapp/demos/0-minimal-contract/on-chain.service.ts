@@ -11,7 +11,7 @@ export class OnChainService {
 
 
   constructor(@Inject('localNodeProvider') public localProvider: NetworkProviderService,
-  @Inject('minimalContract') public minimalContract:ContractService, public myWallet: WalletService
+  @Inject('simpleNfTContract') public simpleNfTContract:ContractService, public myWallet: WalletService
   ) { }
 
 
@@ -20,7 +20,7 @@ export class OnChainService {
     const myProvider = await this.localProvider.init()
     await this.localProvider.initBlockSubscription()
     const mywallet =  await this.myWallet.init(myProvider)
-    await this.minimalContract.init(myProvider,mywallet)
+    await this.simpleNfTContract.init(myProvider,mywallet)
 
   }
 }

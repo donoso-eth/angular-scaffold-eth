@@ -10,6 +10,7 @@
     "contracts:test": "cd hardhat && npx hardhat --tsconfig ./tsconfig.hardhat.json test",
     "deploy": "cd hardhat && npx hardhat --tsconfig ./tsconfig.hardhat.json run ./scripts/deploy.ts --network localhost",
     "deploy:ropsten": "cd hardhat && npx hardhat --tsconfig ./tsconfig.hardhat.json run ./scripts/deploy.ts --network ropsten",
+    "mint": "cd hardhat && npx hardhat --tsconfig ./tsconfig.hardhat.json run ./scripts/mint.ts",
     "e2e": "ng e2e",
     "generate": "cd hardhat && npx hardhat --tsconfig ./tsconfig.hardhat.json generate",
     "lint": "ng lint",
@@ -33,6 +34,7 @@
     "@download/blockies": "^1.0.3",
     "@openzeppelin/contracts": "^4.4.2",
     "ethers": "^5.0.0",
+    "ipfs-http-client": "^55.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
