@@ -11,9 +11,9 @@ export class HomeComponent implements OnInit, OnChanges {
   ngOnChanges(): void {
   }
 
-  @Input() public contractName:string
+  @Input() public contractName!:string
 
-  @Input() public blockchain_is_busy:boolean;
+  @Input() public blockchain_is_busy!:boolean;
   
   ngOnInit(): void {
   }

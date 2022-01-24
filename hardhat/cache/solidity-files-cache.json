@@ -475,8 +475,8 @@
       ]
     },
     "C:\\Users\\javie\\Documents\\WEB\\BLOCKCHAIN\\angular-scaffold-eth\\hardhat\\contracts\\3-SimpleNftContract.sol": {
-      "lastModificationDate": 1642839254963,
-      "contentHash": "34639318bf9b1b684e71060022244700",
+      "lastModificationDate": 1642938145842,
+      "contentHash": "b3f014651bb9e33d4be63f2f26570ae2",
       "sourceName": "contracts/3-SimpleNftContract.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -589,6 +589,41 @@
       ],
       "artifacts": [
         "IERC721Enumerable"
+      ]
+    },
+    "C:\\Users\\javie\\Documents\\WEB\\BLOCKCHAIN\\angular-scaffold-eth\\hardhat\\contracts\\0-TinkerContract.sol": {
+      "lastModificationDate": 1642846822533,
+      "contentHash": "d0547c78dc60d3ffb293a0314777dc75",
+      "sourceName": "contracts/0-TinkerContract.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "TinkerContract"
       ]
     }
   }

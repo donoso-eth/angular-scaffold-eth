@@ -269,7 +269,7 @@ export class SimpleNftContract extends BaseContract {
 
     mintItem(
       to: string,
-      tokenURI: string,
+      _tokenURI: string,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
@@ -368,7 +368,7 @@ export class SimpleNftContract extends BaseContract {
 
   mintItem(
     to: string,
-    tokenURI: string,
+    _tokenURI: string,
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
@@ -461,7 +461,7 @@ export class SimpleNftContract extends BaseContract {
 
     mintItem(
       to: string,
-      tokenURI: string,
+      _tokenURI: string,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
@@ -625,7 +625,7 @@ export class SimpleNftContract extends BaseContract {
 
     mintItem(
       to: string,
-      tokenURI: string,
+      _tokenURI: string,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
@@ -728,7 +728,7 @@ export class SimpleNftContract extends BaseContract {
 
     mintItem(
       to: string,
-      tokenURI: string,
+      _tokenURI: string,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 

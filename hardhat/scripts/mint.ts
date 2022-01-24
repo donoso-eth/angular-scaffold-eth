@@ -4,8 +4,7 @@ import { readFileSync } from "fs";
 import { create } from 'ipfs-http-client'
 import { join } from "path";
 import { Contract, providers } from "ethers";
-import { HardhatRuntimeEnvironment } from "hardhat/types";
-import { exit } from "process";
+
 const delayMS = 1000 //sometimes xDAI needs a 6000ms break lol 😅
 const ipfsClient = create({host: 'ipfs.infura.io', port: 5001, protocol: 'https' })
 const contract_path_relative = '../src/assets/contracts/';

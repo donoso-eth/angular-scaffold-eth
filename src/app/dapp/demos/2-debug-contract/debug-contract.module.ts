@@ -9,8 +9,9 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { DebugContractComponent } from './debug-contract/debug-contract.component';
 import {MatTabsModule} from '@angular/material/tabs';
-import { blockchain_imports, blockchain_providers } from './blockchain_wiring';
-import {OnChainService } from './on-chain.service';
+import { OnChainService } from '../3-simple-nft-example/on-chain.service';
+import { blockchain_imports } from '../3-simple-nft-example/blockchain_wiring';
+
 
 @NgModule({
   declarations: [DebugContractComponent,

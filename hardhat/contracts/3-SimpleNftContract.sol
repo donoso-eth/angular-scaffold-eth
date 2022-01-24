@@ -15,7 +15,7 @@ import "hardhat/console.sol";
 contract SimpleNftContract is ERC721URIStorage, ERC721Enumerable, Ownable {
     using Counters for Counters.Counter;
     Counters.Counter public _tokenIds;
-
+    
     constructor() ERC721("Simple NFT Contract", "SNC") {
         // _setBaseURI("https://ipfs.io/ipfs/");
     }
@@ -57,7 +57,7 @@ contract SimpleNftContract is ERC721URIStorage, ERC721Enumerable, Ownable {
         // }
     }
 
-    function mintItem(address to, string memory tokenURI)
+    function mintItem(address to, string memory _tokenURI)
         public
         onlyOwner
         returns (uint256)
@@ -65,7 +65,7 @@ contract SimpleNftContract is ERC721URIStorage, ERC721Enumerable, Ownable {
         _tokenIds.increment();
         uint256 id = _tokenIds.current();
         _mint(to, id);
-        _setTokenURI(id, tokenURI);
+        _setTokenURI(id, _tokenURI);
 
         return id;
     }

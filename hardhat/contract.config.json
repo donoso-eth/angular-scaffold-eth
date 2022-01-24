@@ -1,4 +1,9 @@
 {
+    "tinkerContract": {
+        "artifactsPath": "0-TinkerContract.sol/TinkerContract.json",
+        "name": "TinkerContract",
+        "jsonName": "tinker_contract"
+    },
     "helloWorldContract": {
         "artifactsPath": "1-HelloWorldContract.sol/HelloWorldContract.json",
         "name": "HelloWorldContract",

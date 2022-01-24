@@ -4,6 +4,7 @@ import {
   Component,
   ComponentFactoryResolver,
   ElementRef,
+  Input,
   OnInit,
   ViewChild,
   ViewContainerRef,
@@ -15,6 +16,7 @@ import { ContractInputComponent } from '../contract-input/contract-input.compone
 import { ethers } from 'ethers';
 import {
   BlockWithTransactions,
+  ContractService,
   convertEtherToWei,
   convertUSDtoEther,
   convertWeiToEther,
@@ -27,7 +29,7 @@ import {
   IINPUT_EVENT,
   NotifierService,
 } from 'angularonchain';
-import { OnChainService } from '../on-chain.service';
+
 
 @Component({
   selector: 'debug-contract',
@@ -58,18 +60,21 @@ export class DebugContractComponent implements AfterViewInit {
 
   newWallet: ethers.Wallet;
 
-  dollarExchange: number;
+  
   balanceDollar: number;
   constructor(
     private dialogService: DialogService,
     private notifierService: NotifierService,
-    private onChainService: OnChainService,
+
 
     private componentFactoryResolver: ComponentFactoryResolver
   ) {
     this.contract_abi = DebugContractMetadata.abi;
     console.log(this.contract_abi);
   }
+
+  @Input() contractToDebugService: ContractService;
+  @Input() dollarExchange: number;
 
   @ViewChild('inputContainer', { read: ViewContainerRef })
   inputContainer: ViewContainerRef;
@@ -113,7 +118,7 @@ export class DebugContractComponent implements AfterViewInit {
 
     componentRef.instance.newEventFunction.subscribe(
       async (value: IINPUT_EVENT) => {
-        const myResult = await this.onChainService.contractService.runFunction(
+        const myResult = await this.contractToDebugService.runFunction(
           value.function,
           value.args,
           value.state
@@ -147,7 +152,7 @@ export class DebugContractComponent implements AfterViewInit {
   async updateState() {
     for (const stateCompo of this.stateInstances) {
       const result =
-        await this.onChainService.contractService.runContractFunction(
+        await this.contractToDebugService.runContractFunction(
           stateCompo.abi_input.name,
           {}
         );
@@ -169,7 +174,7 @@ export class DebugContractComponent implements AfterViewInit {
 
       this.onChainService.localProvider.blockEventSubscription.subscribe(
         async (blockNr) => {
-          this.onChainService.contractService.refreshBalance();
+          this.contractToDebugService.refreshBalance();
           this.onChainService.walletService.refreshWalletBalance();
           this.blockchain_is_busy = false;
           const block =
@@ -181,9 +186,9 @@ export class DebugContractComponent implements AfterViewInit {
       );
 
       this.newWallet = await this.onChainService.walletService.wallet;
-      this.myContract = this.onChainService.contractService.Contract;
+      this.myContract = this.contractToDebugService.Contract;
 
-      this.onChainService.contractService.contractBalanceSubscription.subscribe(
+      this.contractToDebugService.contractBalanceSubscription.subscribe(
         async (balance) => {
           const ehterbalance = convertWeiToEther(balance);
           const dollar =
@@ -208,8 +213,8 @@ export class DebugContractComponent implements AfterViewInit {
       );
 
       this.contractHeader = {
-        name: this.onChainService.contractService.metadata.name,
-        address: this.onChainService.contractService.metadata.address,
+        name: this.contractToDebugService.metadata.name,
+        address: this.contractToDebugService.metadata.address,
       };
 
       this.eventsAbiArray = this.contract_abi.filter(
